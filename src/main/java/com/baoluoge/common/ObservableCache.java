@@ -9,31 +9,31 @@ import java.util.Map;
  */
 public interface ObservableCache {
 
-    public void add(String key, Object value, int expiration);
+    void add(String key, Object value, int expiration);
 
-    public Observable<Boolean> safeAdd(String key, Object value, int expiration);
+    Observable<Boolean> safeAdd(String key, Object value, int expiration);
 
-    public void set(String key, Object value, int expiration);
+    void set(String key, Object value, int expiration);
 
-    public Observable<Boolean> safeSet(String key, Object value, int expiration);
+    Observable<Boolean> safeSet(String key, Object value, int expiration);
 
-    public void replace(String key, Object value, int expiration);
+    void replace(String key, Object value, int expiration);
 
-    public Observable<Boolean> safeReplace(String key, Object value, int expiration);
+    Observable<Boolean> safeReplace(String key, Object value, int expiration);
 
-    public Observable<Object> get(String key);
+    Observable<Object> get(String key);
 
-    public Observable<Map<String, Object>> get(String[] keys);
+    Observable<Map<String, Object>> get(String[] keys);
 
-    public Observable<Long> incr(String key, int by);
+    Observable<Long> incr(String key, int by);
 
-    public Observable<Long> decr(String key, int by);
+    Observable<Long> decr(String key, int by);
 
-    public void clear();
+    void clear();
 
-    public void delete(String key);
+    void delete(String key);
 
-    public boolean safeDelete(String key);
+    Observable<Boolean> safeDelete(String key);
 
-    public void stop();
+    void stop();
 }
